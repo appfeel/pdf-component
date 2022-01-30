@@ -8,7 +8,6 @@ Web component to render pdf documents on any html.
 
 ```html
 <script type="module" src="https://unpkg.com/pdf-component/dist/pdf-component/pdf-component.esm.js"></script>
-<script nomodule src="https://unpkg.com/pdf-component/dist/pdf-component/pdf-component.js"></script>
 
 <pdf-component src="path-to-document.pdf"></pdf-component>
 ```

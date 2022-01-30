@@ -12,7 +12,7 @@
     "unpkg": "dist/pdf-component/pdf-component.esm.js",
     "repository": {
         "type": "git",
-        "url": "https://github.com/ionic-team/stencil-component-starter.git"
+        "url": "https://github.com/appfee/pdf-component.git"
     },
     "files": [
         "dist/",
