@@ -12,7 +12,7 @@
     "unpkg": "dist/pdf-component/pdf-component.esm.js",
     "repository": {
         "type": "git",
-        "url": "https://github.com/appfee/pdf-component.git"
+        "url": "https://github.com/appfeel/pdf-component.git"
     },
     "files": [
         "dist/",
