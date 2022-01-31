@@ -18,11 +18,11 @@ export class PDFComponent {
     @Element() component: HTMLElement;
 
     @State() pdfZoom = 1;
-    @State() isZoomButtonsActive = false;
     @State() pdfDocument: PDFDocumentProxy;
 
-    private zoomButtonsHideTimeout: any;
     private pdfContext: HTMLDivElement;
+    private btns: HTMLIonButtonsElement;
+    private zoomButtonsHideTimeout: any;
     private isDocumentLoading = false;
 
     /** PDF document source */
@@ -61,12 +61,12 @@ export class PDFComponent {
     }
 
     private handleMouseEnter() {
-        this.isZoomButtonsActive = true;
+        this.btns?.classList.add('active');
         clearTimeout(this.zoomButtonsHideTimeout);
     }
 
     private handleMouseLeave() {
-        this.zoomButtonsHideTimeout = setTimeout(() => (this.isZoomButtonsActive = false), 1000);
+        this.zoomButtonsHideTimeout = setTimeout(() => this.btns?.classList.remove('active'), 1000);
     }
 
     private handleMouseMove() {
@@ -118,8 +118,7 @@ export class PDFComponent {
 
     renderButtons() {
         if (this.pdfDocument) {
-            const btnsClass = `pdf-zoom-buttons ${this.isZoomButtonsActive ? 'active' : ''}`;
-            return <ion-buttons class={btnsClass}
+            return <ion-buttons ref={e => (this.btns = e)} class='pdf-zoom-buttons active'
                 onMouseEnter={() => this.handleMouseEnter()}
                 onMouseLeave={() => this.handleMouseLeave()}
             >
