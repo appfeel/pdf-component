@@ -1,3 +1,4 @@
+import { initialize } from '@ionic/core';
 import { Component, Prop, Element, Watch, Event, EventEmitter, h, State } from '@stencil/core';
 import pdf from 'pdfjs-dist/build/pdf';
 import { PDFDocumentProxy, RenderParameters } from 'pdfjs-dist/types/src/display/api';
@@ -30,6 +31,10 @@ export class PDFComponent {
 
     /** Emitted when a page has been rendered */
     @Event() pageRendered: EventEmitter<number>;
+
+    constructor() {
+        initialize();
+    }
 
     componentDidLoad(): void {
         const width = this.pdfContext.offsetWidth;
