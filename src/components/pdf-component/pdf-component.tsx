@@ -1,4 +1,4 @@
-import { initialize } from '@ionic/core';
+import { initialize } from '@ionic/core/components';
 import { Component, Prop, Element, Watch, Event, EventEmitter, h, State } from '@stencil/core';
 import pdf from 'pdfjs-dist/build/pdf';
 import { PDFDocumentProxy, RenderParameters } from 'pdfjs-dist/types/src/display/api';
